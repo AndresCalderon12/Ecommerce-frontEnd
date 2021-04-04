@@ -52,7 +52,7 @@
                     <p style="margin-left: 60px;color: gray;"*ngIf=descuento(product.uuid)> <del><strong>Antes: {{product.price | currency:'CO'}}</strong></del></p>
                     <p style="margin-left: 60px"><strong>Ahora: {{product.discountPrice | currency:'CO'}}</strong></p>
                     <p style="margin-left: 60px">{{product.description}}</p>
-                    <p style="margin-left: 60px"> <strong>Cantidad</strong> <input type="number"min="1" value="1" style="height: 30px; width: 50px;margin-left: 20px;" [(ngModel)]="product.quantity"> </p>
+                    <p style="margin-left: 60px"> <strong>Cantidad</strong> <input type="number" min="1" value="1" style="height: 30px; width: 50px;margin-left: 20px;" [(ngModel)]="product.quantity"> </p>
 
                 </div>
                 <div class="offset-md-4 col-md-4">

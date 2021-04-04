@@ -74,7 +74,12 @@ export class TiendaProductosComponent implements OnInit {
       if (data !== null) {
         cartData = JSON.parse(data);
       }
-   
+      if (product.productType===tipoProducto.Descuento) {
+        product.price=product.discountPrice;
+      }else{
+        product.price=product.price;
+
+      }
       cartData.push(product);
       this.updateCartData(cartData);
       localStorage.setItem('cart', JSON.stringify(cartData));
@@ -104,6 +109,7 @@ export class TiendaProductosComponent implements OnInit {
     }
 
     }
+  
 }
 
 

@@ -21,7 +21,7 @@
                     <td>{{cartproduct.description}}</td> 
                     <td>{{cartproduct.price | currency:'CO'}}</td> 
                     <td> <img class="custom-image-style" img src="{{cartproduct.retrievedImage}}" height="100" width="100" ></td>
-                    <td ><input type="number"min="0" value={{cartproduct.quantity}} style="height: 30px; width: 50px;"[(ngModel)]="cartproduct.quantity" ></td>  
+                    <td ><input type="number"min="1" value={{cartproduct.quantity}} style="height: 30px; width: 50px;"[(ngModel)]="cartproduct.quantity" ></td>  
                     <td>  <button class="btn btn-primary btn-sm" (click)="emptyCart(cartproduct.uuid)" >Eliminar</button></td> 
                     <td>
                         <div id="state" >  {{cartproduct.state}}</div>
