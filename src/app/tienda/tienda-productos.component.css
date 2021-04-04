@@ -1,0 +1,13 @@
+#discountLabel{
+    background-color: red;
+    background-size: cover;
+    position: relative;
+    top: -190px ;
+    text-align: center;
+    left: 270px;
+    height: 25px;
+    color: white;
+    width: 100px;
+    transform: rotate(45deg);
+
+}

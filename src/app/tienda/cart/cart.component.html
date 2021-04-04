@@ -1,0 +1,39 @@
+<div class="container row">
+    <div class="col-md-2">
+        <h1>Carrito</h1>
+    </div>
+</div>
+
+<div class="container" style="margin-left: -10px;">
+            <h1 >Lista de productos </h1> 
+            <table > 
+                <tr> 
+                    <th>Nombre</th> 
+                    <th>Descripcion</th> 
+                    <th>Precio</th> 
+                    <th>Imagen</th> 
+                    <th>Cantidad</th> 
+                    <th>Eliminar</th> 
+                    <th>Estado</th> 
+                </tr> 
+                <tr *ngFor="let cartproduct of cartProducts;let i=index"> 
+                    <td>{{cartproduct.name}}</td> 
+                    <td>{{cartproduct.description}}</td> 
+                    <td>{{cartproduct.price | currency:'CO'}}</td> 
+                    <td> <img class="custom-image-style" img src="{{cartproduct.retrievedImage}}" height="100" width="100" ></td>
+                    <td ><input type="number"min="0" value={{cartproduct.quantity}} style="height: 30px; width: 50px;"[(ngModel)]="cartproduct.quantity" ></td>  
+                    <td>  <button class="btn btn-primary btn-sm" (click)="emptyCart(cartproduct.uuid)" >Eliminar</button></td> 
+                    <td>
+                        <div id="state" >  {{cartproduct.state}}</div>
+                       </td> 
+ 
+                </tr> 
+            </table>
+            <div class="col-md-2">
+                <span><strong> </strong> Total: {{total | currency:'CO'}}</span> 
+            </div>
+</div>
+<div class="offset-md-4 col-md-4">
+    <button class="btn btn-primary btn-lg" style="margin-left: -450px; margin-top: 50px;" (click)="checkout()"
+       >Checkout</button>
+</div>

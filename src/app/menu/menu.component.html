@@ -1,0 +1,29 @@
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div><a  style="color: white;" class="navbar-brand">E-commerce</a></div>
+
+        <ul class="navbar-nav">
+            <li ><a  *ngIf="!loginService.isUserLoggedIn()" routerLink="/login" class="nav-link" id="nav-link">Entrar</a></li>
+            <li><a *ngIf="loginService.isUserLoggedIn()" class="nav-link" routerLink="/shop" id="nav-link" >Tienda</a></li>
+            <li class="nav-item dropdown">
+                <a *ngIf="loginService.isUserLoggedIn() && loginService.isAdmin()" class="nav-link dropdown-toggle"  href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Admin
+                </a>
+    
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a  routerLink="/admin/users" class="dropdown-item">Usuarios</a>
+                    <a *ngIf="loginService.isUserLoggedIn()" routerLink="/admin/products" class="dropdown-item">Productos</a>
+
+                </div>
+            </li>
+            <li style="margin-left: 880px;"><a  *ngIf="loginService.isUserLoggedIn()" class="nav-link" id="nav-link">{{user}}</a>  </li>
+
+            <li ><a *ngIf="loginService.isUserLoggedIn()"class="nav-link"  routerLink="/logout" id="nav-link">Salir</a>           </li>
+
+        </ul>
+      
+        
+
+    </nav>
+</header>

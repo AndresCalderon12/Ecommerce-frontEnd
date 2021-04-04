@@ -1,0 +1,35 @@
+<h1>Detalle Producto</h1>
+
+    <table>
+        <tr>
+            <td>Id Producto</td>
+            <td>{{product.uuid}}</td>
+        </tr>
+        <tr>
+            <td>Nombre producto</td>
+            <td>{{product.name}}</td>
+        </tr>
+        <tr>
+            <td>Descripcion</td>
+            <td>{{product.description}}</td>
+        </tr>
+        <tr>
+            <td>Sku</td>
+            <td>{{product.sku}}</td>
+        </tr>
+        <tr>
+            <td>Precio</td>
+            <td>{{product.price | currency:'CO'}}</td>
+        </tr>
+        <tr>
+            <td>Tipo Producto</td>
+            <td>{{product.productType}}</td>
+        </tr>
+    </table>
+    <br>
+    <img src="{{product.retrievedImage}}" height="200" width="200">
+    
+    <br><br>
+
+    <a class="btn btn-small btn-danger" (click)="deleteProduct()">Eliminar</a> 
+    <a style="margin-left: 30px;" class="btn btn-small btn-warning" (click)="editProduct()">Editar</a>   
